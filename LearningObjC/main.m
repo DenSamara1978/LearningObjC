@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "student.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -41,6 +42,9 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"-----");
         
+        Student *student = [[Student alloc] initWithName:@"Ivan" surname:@"Ivanov" andAge:18];
+        NSLog(@"%@", [student fullName]);
+        NSLog(@"%@", student);
     }
     return 0;
 }

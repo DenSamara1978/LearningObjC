@@ -7,44 +7,77 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "student.h"
+
+int operationAddition(int arg1, int arg2) {
+    return arg1 + arg2;
+}
+
+int operationSubstraction(int arg1, int arg2) {
+    return arg1 - arg2;
+}
+
+int operationMultiplication(int arg1, int arg2) {
+    return arg1 * arg2;
+}
+
+int operationDivision(int arg1, int arg2) {
+    return arg1 / arg2;
+}
+
+int operationRemainder(int arg1, int arg2) {
+    return arg1 % arg2;
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSArray *strArray = @[@"One", @"Two", @"Skip", @"Three", @"End", @"Four"];
+        NSNumber *firstNumber = [NSNumber new];
+        NSNumber *secondNumber = [NSNumber new];
+        int number = 0;
+        char operation[100];
         
-        NSLog(@"-----");
-        for (int i = 0; i < strArray.count; ++i) {
-            NSLog(@"%@", strArray[i]);
-        }
+        NSLog(@"Enter the first number");
+        scanf("%d", &number);
+        firstNumber = [NSNumber numberWithInt:number];
         
-        NSLog(@"-----");
-        for (int i = 0; (i < strArray.count) && ([strArray[i] length] < 4); ++i) {
-            NSLog(@"%@", strArray[i]);
-        }
-
-        NSLog(@"-----");
-        int i = 0;
-        while (i < 4) {
-            NSLog(@"%@", strArray[i++]);
-        }
+        NSLog(@"Enter the second number");
+        scanf("%d", &number);
+        secondNumber = [NSNumber numberWithInt:number];
         
-        NSLog(@"-----");
-        i = 0;
-        while (true) {
-            if ([strArray[i] isEqualToString:@"Skip"]) {
-                ++i;
-                continue;
-            }
-            if ([strArray[i] isEqualToString:@"End"])
+        NSLog(@"Enter the math operation");
+        scanf("%s", operation);
+        
+        NSNumber *result = [NSNumber new];
+        BOOL isValid = NO;
+        switch(operation[0]){
+            case '+':
+                result = [NSNumber numberWithInt: operationAddition(firstNumber.intValue, secondNumber.intValue)];
+                isValid = YES;
                 break;
-            NSLog(@"%@", strArray[i++]);
+            case '-':
+                result = [NSNumber numberWithInt: operationSubstraction(firstNumber.intValue, secondNumber.intValue)];
+                isValid = YES;
+                break;
+            case '/':
+                result = [NSNumber numberWithInt: operationDivision(firstNumber.intValue, secondNumber.intValue)];
+                isValid = YES;
+                break;
+            case '*':
+                result = [NSNumber numberWithInt: operationMultiplication(firstNumber.intValue, secondNumber.intValue)];
+                isValid = YES;
+                break;
+            case '%':
+                result = [NSNumber numberWithInt: operationRemainder(firstNumber.intValue, secondNumber.intValue)];
+                isValid = YES;
+                break;
         }
-        NSLog(@"-----");
         
-        Student *student = [[Student alloc] initWithName:@"Ivan" surname:@"Ivanov" andAge:18];
-        NSLog(@"%@", [student fullName]);
-        NSLog(@"%@", student);
+        if (isValid){
+            NSLog(@"The result of %@ %s %@ is %@", firstNumber, operation, secondNumber, result);
+        } else {
+            NSLog(@"The operation is incorrect!");
+        }
+        [firstNumber release];
+        [secondNumber release];
     }
     return 0;
 }

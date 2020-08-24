@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92EA1F2E24E08E94006969EB /* student.m in Sources */ = {isa = PBXBuildFile; fileRef = 92EA1F2D24E08E94006969EB /* student.m */; };
 		92F1A74C24CCD095004F3D61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F1A74B24CCD095004F3D61 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -24,8 +23,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		92EA1F2C24E08E7F006969EB /* student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = student.h; sourceTree = "<group>"; };
-		92EA1F2D24E08E94006969EB /* student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = student.m; sourceTree = "<group>"; };
 		92F1A74824CCD095004F3D61 /* LearningObjC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LearningObjC; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F1A74B24CCD095004F3D61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,8 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				92F1A74B24CCD095004F3D61 /* main.m */,
-				92EA1F2C24E08E7F006969EB /* student.h */,
-				92EA1F2D24E08E94006969EB /* student.m */,
 			);
 			path = LearningObjC;
 			sourceTree = "<group>";
@@ -93,7 +88,7 @@
 		92F1A74024CCD095004F3D61 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = Melandra;
 				TargetAttributes = {
 					92F1A74724CCD095004F3D61 = {
@@ -125,7 +120,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92F1A74C24CCD095004F3D61 /* main.m in Sources */,
-				92EA1F2E24E08E94006969EB /* student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +238,8 @@
 		92F1A75024CCD095004F3D61 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G2545JTZWP;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -254,6 +250,8 @@
 		92F1A75124CCD095004F3D61 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G2545JTZWP;
 				ENABLE_HARDENED_RUNTIME = YES;
